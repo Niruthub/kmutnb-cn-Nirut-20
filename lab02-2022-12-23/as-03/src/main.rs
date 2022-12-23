@@ -1,6 +1,6 @@
 fn main() {
     // ค่าอินพุต
-    let num: u32 = 5;
+    let num: u32 = 10;
     // x วนลูปแถว counter วนลูปหลัก
     let mut x = 0;
     let mut counter;
@@ -8,13 +8,13 @@ fn main() {
     loop{
         counter = 0;
         x+=1;
-        while counter<(num+x-1){
+        while counter <  (num*2-x){
             counter+=1;
-            if(num-x+1) <= counter{
-                print!("* ");
+           if(counter<x) || (counter>num*2-x) {
+                print!("  ");
             }
             else{
-                print!("  ");
+                print!("* ");
             }      
         }
         println!("");
