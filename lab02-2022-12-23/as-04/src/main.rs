@@ -8,42 +8,59 @@ fn main() {
     // Trim the input and parse it as an integer
     let input: i32 = input.trim().parse().expect("Enable number : ");
 
-    // Use the input value
+    // Use the input valueclear
     println!("You entered: {}", input);
     println!("-----------------------------------------------------------------------");
 
-    let num = input;
-    let mut vec = vec![0, 1, 1];
-    let mut x = 2;
-    let mut counter = 2;             // start = 0
+    let num = input;                // input keybord
+    let mut prime = vec![];         // ว่างๆไว้เก็บจำนวนเฉพาะ 1 ถึง ตัวมันเอง
+    let mut x;                      // ไว้คำนวนตอนท้ายว่ามีเลขไรหารได้บ้าง
+    let mut counter;                // ไว้นับ loop      start = 0
+    let mut checkprime:bool = true; // ไว้เช็คเลขเฉพาะ
 
-    //x = arr[arr.len()-1] + arr[arr.len()-2];
-    //println!("x = {}",x);
-    loop{
-        x = vec[vec.len()-1] + vec[vec.len()-2];
-        
-        if x > num{
-            break;
+    // วนหาเลขเฉพาะตั้งแต่ 1 ถึง input
+    for i in 1..num+1 {
+        if i == 0 || i ==1 {
+            checkprime = false;
         }
-        vec.push(x);
-        counter += 1 ;
+        for j in 2..i{
+            if i % j == 0 {
+                checkprime = false;
+                break;
+            }
+        }
+        if checkprime {
+            prime.push(i);              // เป็นเลขเฉพะ เพิ่มเข้าไปใน ตัวแปร prime
+        }
+        checkprime = true;
     }
-    
-    //println!("counter = {}",counter);
-    //println!("vec = {:?}", vec);
-    
-    let mut vec2 = vec![1];
+    // เลขเฉพาะทั้งหมด
+    //println!("prime = {:?}", prime);
+
     let mut s = String::new();      // กล่องข้อความ
-    for i in vec.iter() {
-        if i < &2{
-            continue;
-        }
-        
-        //s.push_str();
-        //vec2.push(*i);
-        print!("{}", i);
-        print!(" ");
-    }
-    println!("{}",s);
+    let _s_2 = String::new();       // กล่องข้อความ ไว้รับตัวแปร prime
 
+
+    // ตัวแปรที่ใช้ คำนวน
+    counter = 0;
+    x = num;
+
+    // วนหาตัวคูณที่ใช้จริงๆ ในเลขเฉพาะทั้งหมด
+    while counter < prime.len(){
+        if prime[counter] < x  || x != 0{
+            while x % prime[counter] == 0{
+                x = x / prime[counter];
+                let _s_2 = prime[counter].to_string();
+                s.push_str(&_s_2.to_string());
+                s.push_str("*");     
+            } 
+        } 
+        else {
+            break;
+        }              
+        counter += 1;
+    }
+    
+    s.pop();
+    println!("{} = {}",num,s);
 }
