@@ -1,0 +1,1 @@
+D:\Nirut------------------------OK\EnET-C\030513347\ MOBILE\ AND\ CLOUD\ COMPUTING\Lab\kmutnb-cn-Nirut-20\lab02-2022-12-23\as-06\target\debug\as-06.exe: D:\Nirut------------------------OK\EnET-C\030513347\ MOBILE\ AND\ CLOUD\ COMPUTING\Lab\kmutnb-cn-Nirut-20\lab02-2022-12-23\as-06\src\main.rs
