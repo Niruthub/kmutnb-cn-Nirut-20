@@ -39,7 +39,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn sum_of_number() {
+    fn test_count_unique_work() {
         let s = "this cat this bat this rat";
         let result: Vec<&str> = s.split(' ').collect();
         let result = step2(result);

@@ -1,26 +1,26 @@
 fn main() {
     // A
-    let s = 1;
+    let smash = 1;
 
     // step 1 s(2)
-    let s = sum(s+s); // s = 3
+    let smash = sum(smash+smash); // s = 3
 
     // step 2 s(3)
-    let s = sum(s); // s = 6
+    let smash = sum(smash); // s = 6
   
     // step 3 s(4)
-    let s = sum(4); // s = 10
+    let smash = sum(4); // s = 10
 
     //B s(100)
-    let s = sum(100);
-    println!("{}",s);
+    let smash = sum(100);
+    println!("{}",smash);
 }
 
-fn sum(s:u32) -> u32{
-    if s==1 {
-        return s;
+fn sum(_s:u32) -> u32{
+    if _s==1 {
+        return _s;
     }
-    return sum(s-1)+s;
+    return sum(_s-1)+_s;
 }
 /*
 fn sum(mut s:u32) -> u32{
@@ -39,9 +39,9 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_count_unique_work() {
-        let s = 5;
-        let result =sum(5); // result = 1+2+3+4+5 = 15
+    fn sum_of_number() {
+        let _s = 5;
+        let result =sum(_s); // result = 1+2+3+4+5 = 15
         assert_eq!(result, 15);
     }
 }
